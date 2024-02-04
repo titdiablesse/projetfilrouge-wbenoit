@@ -230,6 +230,7 @@ let products = [
   },
 ];
 
+
 // let cart = [
 //   { id: 1, name: 'Produit 1', price: 10, quantity: 2, active: true },
 //   { id: 2, name: 'Produit 2', price: 20, quantity: 1, active: true },

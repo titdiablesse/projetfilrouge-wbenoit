@@ -12,6 +12,10 @@
 :root{
     --main-color: #207178;
 }
+#icons[data-allowed="false"] .fa-cart-shopping {
+    display: none;
+}
+
 html{
     scroll-behavior: smooth;
 }
