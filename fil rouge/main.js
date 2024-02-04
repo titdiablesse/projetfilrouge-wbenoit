@@ -32,15 +32,6 @@ function myBars(){
 }
 myBars()
 
-function myFun(){
-    let plus = document.querySelector(".plus");
-    let textBox = document.querySelector(".text-box ");
-    plus.onclick = ()=>{
-        textBox.classList.toggle("active");
-        plus.classList.toggle("img_active")
-    }
-}
-myFun()
 
 
 function toTop(){
