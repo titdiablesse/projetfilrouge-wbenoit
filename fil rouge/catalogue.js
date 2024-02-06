@@ -90,3 +90,394 @@ $(document).ready(function () {
 myHeader();
 myBars();
 toTop();
+
+ //js a reverifie je finirai 
+
+ // Fonction pour générer une carte produit
+function createProductCard(product) {
+    // Création des éléments HTML
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+  
+    const image = document.createElement('img');
+    image.src = product.image;
+    image.alt = product.titre;
+  
+    const title = document.createElement('h3');
+    title.textContent = product.titre;
+  
+    const description = document.createElement('p');
+    description.textContent = product.description;
+  
+    const price = document.createElement('p');
+    price.textContent = `${product.prix} €`;
+  
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Ajouter au panier';
+    addButton.addEventListener('click', () => {
+      // Ajouter la logique pour ajouter le produit au panier ici
+    });
+  
+    // Ajout des éléments à la carte produit
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(price);
+    card.appendChild(addButton);
+  
+    return card;
+  }
+  
+  // Fonction pour afficher les produits dans un conteneur de catégorie donné
+  function displayProducts(categoryId, products) {
+    const container = document.getElementById(categoryId);
+    const productsContainer = container.querySelector('.products-container');
+  
+    // Nettoyer le conteneur des produits précédents
+    productsContainer.innerHTML = '';
+  
+    // Filtrer les produits par catégorie
+    const categoryProducts = products.filter(product => product.category === categoryId);
+  
+    // Générer et afficher les cartes produits dans le conteneur
+    categoryProducts.forEach(product => {
+      const card = createProductCard(product);
+      productsContainer.appendChild(card);
+    });
+  }
+  
+  const categories = [
+    { id: 1, name: 'Mobilier d\'intérieur' },
+    { id: 2, name: 'Luminaires' },
+    { id: 3, name: 'Tapis' },
+    { id: 4, name: 'Objets de décorations' }
+  ];
+  const produits = [
+    {
+      id: 1,
+      image: 'mobilier-5.jpg',
+      titre: 'Table à manger en bois',
+      description: 'Table à manger en bois massif avec finition élégante.',
+      prix: 299.99,
+      moq: 5,
+      categorieId: 1
+    },
+    {
+      id: 2,
+      image: 'luminaire-1.jpg',
+      titre: 'Lampe moderne',
+      description: 'Lampe avec un design moderne et éclairage ajustable.',
+      prix: 129.99,
+      moq: 10,
+      categorieId: 2
+    },
+    {
+      id: 3,
+      image: 'tapis-2.jpg',
+      titre: 'Tapis en laine',
+      description: 'Tapis doux en laine avec motif géométrique.',
+      prix: 89.99,
+      moq: 20,
+      categorieId: 3
+    },
+    {
+      id: 4,
+      image: 'deco-3.jpg',
+      titre: 'Vase éthnique en argile',
+      description: 'Vase éthnique en argile avec motifs gravés à la main.',
+      prix: 49.99,
+      moq: 20,
+      categorieId: 4
+    },
+  ];
+  
+  // Pour chaque catégorie, afficher les produits correspondants
+  categories.forEach(categorie => {
+    const elementListe = document.createElement('li');
+    elementListe.textContent = categorie.name; // Utilisation de categorie.name au lieu de produits.name
+    elementListe.id = `categorie-${categorie.id}`;
+    listeProduits.appendChild(elementListe);
+  });
+  //tableau produits
+  let products = [
+  {
+    id: 1,
+    name: "Table en bois",
+    description: "Table en bois massif avec finition élégante.",
+    imageUrl: "pic/mobilier-1.jpg",
+    price: 199.99,
+    category: 'Mobilier',
+    quantity: 1,
+  },
+  {
+    id: 2,
+    name: "etagere",
+    description: "petite etagere style industriel.",
+    imageUrl: "pic/mobilier-2.jpg",
+    price: 89.99,
+    category: 'Mobilier',
+    quantity: 1,
+  },
+  {
+    id: 3,
+    name: "canapé cuir marron",
+    description: "Canape en cuir marron trois places.",
+    imageUrl: "pic/mobilier-3.jpg",
+    price: 1299.99,
+    category: 'Mobilier',
+    quantity: 1,
+  },
+  {
+    id: 4,
+    name: "canapé en tissu vert",
+    description: "Canapeen tissu vert 3 places.",
+    imageUrl: "pic/mobilier-4.jpg",
+    price: 999.99,
+    category: 'Mobilier',
+    quantity: 1,
+  },
+  {
+    id: 5,
+    name: "ensemble table et chaise ",
+    description: "ensemble table et chaise styles scandinave.",
+    imageUrl: "pic/mobilier-5.jpg",
+    price: 499.49,
+    category: 'Mobilier',
+    quantity: 1,
+  },
+  {
+    id: 6,
+    name: "suspension noire industriel",
+    description: "Lampe avec un design moderne ",
+    imageUrl: "./pic/luminaire-1.jpg",
+    price: 79.79,
+    category: 'Luminaire',
+    quantity: 1,
+  },
+  {
+    id: 7,
+    name: "suspension blanche ",
+    description: "Lampe avec un design moderne ",
+    imageUrl: "./pic/luminaire-2.jpg",
+    price: 89.99,
+    category: 'Luminaire',
+    quantity: 1,
+  },
+  {
+    id: 8,
+    name: "suspencion style bois ",
+    description: "Lampe avec un design modern.",
+    imageUrl: "./pic/luminaire-3.jpg",
+    price: 51.99,
+    category: 'Luminaire',
+    quantity: 1,
+  },
+  {
+    id: 9,
+    name: "suspencion noir",
+    description: "Lampe avec un design moderne.",
+    imageUrl: "./pic/luminaire-4.jpg",
+    price: 121.49,
+    category: 'Luminaire',
+    quantity: 1,
+  },
+  {
+    id: 10,
+    name: "Applique murale",
+    description: "Lampe avec un design moderne.",
+    imageUrl: "./pic/luminaire-5.jpg",
+    price: 39.99,
+    category: 'Luminaire',
+    quantity: 1,
+  },
+  {
+    id: 11,
+    name: "vase style bois",
+    description: "deux magnifique vase style bois",
+    imageUrl: "./pic/deco-1.jpg",
+    price: 19.99,
+    category: 'Décoration',
+    quantity: 1,
+  },
+  {
+    id: 12,
+    name: "vase design",
+    description: "Magnifique vase vert pomme .",
+    imageUrl: "./pic/deco-2.jpg",
+    price: 49.99,
+    category: 'Décoration',
+    quantity: 1,
+  },
+  {
+    id: 13,
+    name: "3 poterie decorative",
+    description: "poterie decorative en terre cuite.",
+    imageUrl: "./pic/deco-3.jpg",
+    price: 119.49,
+    category: 'Décoration',
+    quantity: 1,
+  },
+  {
+    id: 14,
+    name: "vase en terre",
+    description: "vase en terre cuir style grec.",
+    imageUrl: "./pic/deco-4.jpg",
+    price: 149.49,
+    category: 'Décoration',
+    quantity: 1,
+  },
+  {
+    id: 15,
+    name: "vase bleu",
+    description: "vase en verre souffle bleu.",
+    imageUrl: "./pic/deco-5.jpg",
+    price: 189.99,
+    category: 'Décoration',
+    quantity: 1,
+  },
+  {
+    id: 16,
+    name: "peau de bete",
+    description: "tapis en fausse peau de bete.",
+    imageUrl: "./pic/tapis-1.jpg",
+    price: 130.00,
+    category: 'Tapis',
+    quantity: 1,
+  },
+  {
+    id: 17,
+    name: "Tapis style marocain",
+    description: "tapis style marocain motif lineaire.",
+    imageUrl: "./pic/tapis-2.jpg",
+    price: 121.49,
+    category: 'Tapis',
+    quantity: 1,
+  },
+  {
+    id: 18,
+    name: "tapis orientale",
+    description: "tapis style orientale .",
+    imageUrl: "./pic/tapis-3.jpg",
+    price: 121.49,
+    category: 'Tapis',
+    quantity: 1,
+  },
+  {
+    id: 19,
+    name: "tapis elephant",
+    description: "Joli petit tapis style crochet en forme de tete d'elephant.",
+    imageUrl: "./pic/tapis-4.jpg",
+    price: 99.99,
+    category: 'Tapis',
+    quantity: 1,
+  },
+  {
+    id: 20,
+    name: "tapis Noir",
+    description: "tapis moltonne noir .",
+    imageUrl: "./pic/tapis-5.jpg",
+    price: 59.99,
+    category: 'Tapis',
+    quantity: 1,
+  },
+  ];
+  const listeProduits = document.getElementById('listeProduits');
+  
+  categories.forEach(categorie => {
+    const elementListe = document.createElement('li');
+    elementListe.textContent = produits.name;
+    elementListe.id = `categorie-${categorie.id}`; // Utilisation de l'id du tableau comme identifiant
+    listeProduits.appendChild(elementListe);
+  });
+  // permet de tout lier 
+  function saveBasket(basket){
+    localStorage.setItem("basket",JSON.stringify(basket));
+   
+  }
+  
+  function getBasket(){
+   let basket = localStorage.getItem("basket");
+   if (basket == null) {
+        return[];
+   }else{
+    return JSON.parse(basket);
+   }
+  }
+  
+  function addBasket(product){
+    let basket = getBasket();
+    let foundProduct = basket.find(p => p.id == product.id);
+    if(foundProduct != undefined){
+        foundProduct.quantity++;
+    }else {
+        product.quantity = 1;
+        basket.push(product);
+    }
+  
+    saveBasket(basket);
+  }
+  
+  function removeFromBasket(product){
+    let basket = getBasket();
+    basket = basket.filter(p => p.id != product.id)
+    saveBasket(basket);
+  }
+  
+  function changeQuantity(product,quantity){
+    let basket = getBasket();
+    let foundProduct = basket.find(p => p.id == product.id);
+    if(foundProduct != undefined){
+  foundProduct.quantity += quantity;
+  if(foundProduct.quantity <= 0){
+    removeFromBasket(foundProduct)
+  }else{
+    saveBasket(basket);
+  } }   
+  }
+  function getNumberProduct(){
+    let basket = getBasket();
+    let number = 0;
+    for (let product of basket) {
+        number += product.quantity;
+    }
+    return number;
+  }
+  
+  function getTotalPrice(){
+    let basket = getBasket();
+    let total = 0;
+    for(let product of basket) {
+        total += product.quantity * product.price;
+    }
+    return total;
+  }
+  // Sélectionnez tous les boutons +/- et les éléments de quantité
+  document.querySelectorAll('.product-card .quantity').forEach(quantityElement => {
+    const decrementButton = quantityElement.querySelector('.decrement');
+    const incrementButton = quantityElement.querySelector('.increment');
+    const quantityValueElement = quantityElement.querySelector('.quantity-value');
+  
+    // Ajoutez des gestionnaires d'événements pour les boutons +/- pour ajuster la quantité
+    decrementButton.addEventListener('click', () => {
+      let quantity = parseInt(quantityValueElement.textContent);
+      if (quantity > 1) {
+        quantity--;
+        quantityValueElement.textContent = quantity;
+      }
+    });
+  
+    incrementButton.addEventListener('click', () => {
+      let quantity = parseInt(quantityValueElement.textContent);
+      quantity++;
+      quantityValueElement.textContent = quantity;
+    });
+  });
+  
+  document.querySelectorAll('.category-link').forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+      const targetCategory = link.getAttribute('href'); // Récupère l'ID de la catégorie cible
+      const targetElement = document.querySelector(targetCategory); // Sélectionne l'élément de catégorie
+      targetElement.scrollIntoView({ behavior: 'smooth' }); // Fait défiler jusqu'à la catégorie cible en douceur
+    });
+  });
