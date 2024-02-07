@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/18a8b83caf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="panier.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -102,89 +103,32 @@
 
 
     
-    <!-- Section du panier -->
- <section class="shoppingCart">
-    <div class="cartModal">
-        <div class="cart">
-            <!-- Titre du panier -->
-            <strong>Panier</strong>
-            <!-- Tableau pour afficher les produits dans le panier -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produit(s)</th>
-                        <th>prix unitaire</th>
-                        <th>quantite</th>
-                        <th>Prix total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Boucle sur les produits dans le panier -->
-                    <tr v-for="prod in cart" :key="prod.id" v-cloak>
-                        <!-- Utilisation d'un template pour afficher seulement les produits actifs -->
-                        <template v-if="prod.active">
-                            <!-- Colonne pour afficher le nom et la quantité du produit -->
-                            <td>{{prod.name +' x '+ prod.quantity }}</td>
-                            <!-- Colonne pour afficher le prix unitaire du produit -->
-                            <td>{{ prod.price }}</td>
-                            <!-- Colonne pour afficher la quantité du produit -->
-                            <td>{{ prod.quantity }}</td>
-                            <!-- Colonne pour afficher le prix total du produit -->
-                            <td>{{ totalPrice() }}</td>
-                        </template>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-  </section>
+    <!-- Section du panier ajout de ton crud -->
+    <main id="app">
 
+        <h1>
+          Votre Panier
+        </h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom produit</th>
+                    <th>Prix produit</th>
+                    <th>Quantité produit</th>
+                    <th>Catégorie produit</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+           
+        </table>
+
+       
   <!-- Section des produits disponibles -->
-<section class="items">
-    <!-- Boucle sur les produits disponibles -->
-    <div v-for="prod in product" v-cloak>
-        <div class="description">
-            <!-- Titre du produit -->
-            <h3>{{ prod.name }}</h3>
-            <!-- Image du produit -->
-            <img :src="prod.imageUrl" alt="{{ prod.name }}" />
-            <!-- Prix du produit -->
-            <span class="price">{{ prod.price }}</span>
-            <!-- Description du produit -->
-            <p class="details">{{ prod.description }}</p>
-            <!-- Boutons pour ajouter au panier et voir plus de détails -->
-            <div class="btns">
-                <!-- Bouton pour ajouter au panier -->
-                <button class="add" @click="addToCart(prod)">
-                    Ajouter au panier
-                </button>
-                <!-- Bouton pour voir plus de détails -->
-                <button class="seeDetails">Voir plus de détails</button>
-            </div>
-        </div>
-    </div>
-  </section>
 
 
-    <!-- ajout d'un bouton et d'un champ select allant de 10 à 90 -->
-    <label for="q">Quantité: </label>
-<select id="qt" name="q">
-    <option value="10">10</option>
-    <option value="20">20</option>
-    <option value="30">30</option>
-    <option value="40">40</option>
-    <option value="50">50</option>
-    <option value="60">60</option>
-    <option value="70">70</option>
-    <option value="80">80</option>
-    <option value="90">90</option>
-</select>
-<!-- data-id est l’identifiant de l’article. Ainsi, si on ajoute un article déjà présent au panier, on incrémente la quantité au lieu de l’ajouter comme un nouvel article,
-data-name concerne, vous vous en doutiez, le nom de l’article,
-data-price contient le prix. J’ai fait le choix d’un formatage à la française car je trouvais plus simple à gérer comme ça pour l’affichage,
-data-url renseigne l’url de la fiche produit. -->
 
-<button type="button" class="add-to-cart" data-id="1" data-name="NomProduits" data-price="10.99" data-url="urlProduit">Ajouter au panier</button>
+
 
 
 <div class="dropdown">
@@ -203,10 +147,22 @@ data-url renseigne l’url de la fiche produit. -->
         <tr><th>Article</th>
             <th>Prix</th>
             <th>Quantité</th>
-            
         </tr>
-    </thead>
+            </thead>  
+            <tbody>
+
+        <td>
+            
+            <button type="button" class="btn btn-danger actions" @click="deleteProduct(index)">
+                <i class="fas fa-trash"></i> Supprimer
+            </button>
+        </td>
+    
+</tbody>
+        
+   
     <tbody id="cart-tablebody"></tbody>
+   
 </table>
 
 
@@ -216,76 +172,7 @@ data-url renseigne l’url de la fiche produit. -->
 
 
 
-            <div class="product-one">
-                <div class="product-image">
-                    <img src="pic/deco-3.jpg" alt="">
-                    <div class="overlay">
-                        <i class="fas fa-shopping-bag"></i>
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="left">
-                        <h4>
-                            cup holder
-                        </h4>
-                    </div>
-                    <div class="right">
-                        <section>53.00€</section>
-                    </div>
-                </div>
-                <article>decoration intérieur</article>
-            </div>
-
-
-            <div class="product-one">
-                <div class="product-image">
-                    <img src="pic/luminaire-4.jpg" alt="">
-                    <div class="overlay">
-                        <i class="fas fa-shopping-bag"></i>
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="left">
-                        <h4>
-                           Luminaire noir
-                        </h4>
-                    </div>
-                    <div class="right">
-                        <section>53.00€</section>
-                    </div>
-                </div>
-                <article>Luminaire</article>
-            </div>
-
-            <div class="product-one">
-                <div class="product-image">
-                    <img src="pic/luminaire-3.jpg" alt="">
-                    <div class="overlay">
-                        <i class="fas fa-shopping-bag"></i>
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="left">
-                        <h4>
-                            luminaire orange
-                        </h4>
-                    </div>
-                    <div class="right">
-                        <section>53.00€</section>
-                    </div>
-                </div>
-                <article>Luminaire</article>
-            </div>
-
-            
-        </div>
-    </div>
+         
 
     <!-- end section four  -->
 
@@ -425,4 +312,5 @@ data-url renseigne l’url de la fiche produit. -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script src="main.js"></script>
+<script src="panier.js"></script> 
 </html>
