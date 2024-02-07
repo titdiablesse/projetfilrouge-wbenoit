@@ -948,12 +948,45 @@ body footer .Contact {
 
 
 
-
-
-
-
-
-
-
-
-
+/* css pour le catalogue quelque reglage a faire pour bien aligner */
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .nav-list li {
+    list-style-type: none;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav-list li a:hover {
+    color: blue;
+  }
+  
+  
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 produits par ligne */
+    gap: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  /* Définition d'une classe pour les images des produits */
+  .product-image {
+    max-width: 100%; /* Largeur maximale pour s'adapter au conteneur parent */
+    height: auto; /* Hauteur automatique pour conserver les proportions originales */
+  }
+  
+  /* Utilisation de Flexbox pour aligner horizontalement les éléments dans le conteneur de produits */
+  .products-container {
+    display: flex;
+    flex-wrap: wrap; /* Permettre le passage à la ligne des éléments si nécessaire */
+    justify-content: space-between; /* Aligner les éléments avec un espacement égal entre eux */
+  }
