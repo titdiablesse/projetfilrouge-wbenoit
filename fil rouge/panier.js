@@ -1,10 +1,6 @@
 let products = [
     {
-      id: 1,
-      name: "Table en bois",
-      description: "Table en bois massif avec finition élégante.",
-      imageUrl: "pic/mobilier-1.jpg",
-      price: 199.99,
+      id: 1,name: "Table en bois",description: "Table en bois massif avec finition élégante.",imageUrl: "pic/mobilier-1.jpg",price: 199.99,
       category: 'Mobilier',
       quantity: 10,
     },
@@ -228,4 +224,17 @@ let products = [
           },
       },
   })
+  function calculatePriceExcludingVAT(priceIncludingVAT) {
+    const VATRate = 20; // Taux de TVA en pourcentage (20%)
+    
+    // // Vérifie si le prix TTC est un nombre positif
+    // if (typeof priceIncludingVAT !== 'number' || isNaN(priceIncludingVAT) || priceIncludingVAT <= 0) {
+    //     return null; // Retourne null si le prix TTC est invalide
+    // }
+
+    // Calcul du prix hors taxe
+    const priceExcludingVAT = priceIncludingVAT / (1 + VATRate / 100);
+    return priceExcludingVAT;
+}
+
   app.mount('#app')
