@@ -118,3 +118,11 @@ function confirmerCommande() {
     // Envoyer les données de livraison à un serveur ou effectuer d'autres actions ici
     console.log("Commande confirmée avec succès!");
 }
+// Gérer le clic sur le bouton "Confirmer la commande"
+document.getElementById("confirm-order-btn").addEventListener("click", function() {
+    // Afficher une pop-up avec un message de confirmation
+    alert("Votre commande a été confirmée !");
+
+    // Vous pouvez également effectuer d'autres actions ici, comme rediriger l'utilisateur vers une autre page après la confirmation de la commande
+    // window.location.href = "page-de-confirmation.html";
+});
