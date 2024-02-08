@@ -7,7 +7,7 @@ function myHeader() {
             lol.src = "pic/bulb2.png";
         } else {
             header.classList.remove("active");
-            lol.src = "pic/bulb.png";
+            lol.src = "html/pic/bulb.png";
         }
     });
 }

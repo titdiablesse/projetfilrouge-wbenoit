@@ -207,6 +207,10 @@ header.active #bar{
         font-size: 14px;
     }
 }
+h1,
+p {
+    text-align: center;
+}
 
 @media(max-width: 576px){
     .big-bg .bg-content{
@@ -527,143 +531,6 @@ header.active #bar{
     }
 }
 
-.big-product{
-    width: 90%;
-    margin: 100px auto;
-}
-.big-product .product-title{
-    margin-bottom: 50px;
-    text-align: center;
-}
-.big-product .product-title p{
-    margin-bottom: 2px;
-    text-transform: uppercase;
-    font-size: 15px;
-}
-.big-product .product-title h2{
-    font-weight: 600;
-}
-.big-product .product-title hr{
-    width: 120px;
-    margin: 14px auto;
-    background: gray;
-}
-.big-product .product-flex{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.product-flex .product-one{
-    width: 24%;
-    margin-bottom: 20px;
-}
-.product-flex .product-one img{
-    width: 100%;
-}
-.product-flex .product-one .product-image{
-    position: relative;
-}
-.product-one .product-image .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity .4s ease-in-out;
-}
-
-.product-image .overlay i{
-    margin: 0px 5px;
-    padding: 5px;
-    border: 1px solid #000;
-    font-size: 13px;
-    cursor: pointer;
-    opacity: 0;
-}
-
-
-.product-one:hover .product-image .overlay i{
-    animation: product_icon .5s ease-in-out forwards;
-}
-
-.product-one:hover .product-image .overlay i:nth-child(2){
-    animation-delay: .2s;
-}
-.product-one:hover .product-image .overlay i:nth-child(3){
-    animation-delay: .4s;
-}
-
-.product-one:hover .overlay{
-    opacity: 1;
-}
-
-.product-one .product-image{
-    margin-bottom: 15px;
-}
-
-@keyframes product_icon {
-    0%{
-        opacity: 0;
-        margin-bottom: 50px;
-    }
-    100%{
-        opacity: 1;
-        margin-bottom: 0px;
-    }
-}
-
-.product-one .content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 7px;
-}
-
-.product-one .content h4{
-    margin: 0;
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: capitalize;
-}
-.product-one .content section{
-    font-size: 14px;
-    font-weight: 600;
-}
-.product-one article{
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-/* media  */
-
-@media(max-width: 991px){
-    .big-product .product-one{
-        width: 32%;
-    }
-}
-
-@media(max-width: 768px){
-    .big-product .product-one{
-        width: 49%;
-    }
-}
-
-@media(max-width: 576px){
-    .big-product .product-one{
-        width: 100%;
-    }
-    .big-product .product-title h2{
-        font-size: 19px;
-    }
-    .big-product .product-title hr{
-        width: 100px;
-    }
-}
 
 
 /* media  */
@@ -947,46 +814,97 @@ body footer .Contact {
 /* fin de  footer  */
 
 
+/* Styles pour big collection, big product et big cat */
 
-/* css pour le catalogue quelque reglage a faire pour bien aligner */
-.nav-list {
+.big-collection,
+.big-product,
+.big-cat {
+    padding: 50px 0;
+    background-color: #f5f5f5;
+}
+
+.collect-flex,
+.productcat-flex,
+.bigcat {
     display: flex;
-    justify-content: space-around;
-  }
-  
-  .nav-list li {
-    list-style-type: none;
-  }
-  
-  .nav-list li a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .nav-list li a:hover {
-    color: blue;
-  }
-  
-  
-  .products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 produits par ligne */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-  }
-  
-  .product-card {
-    border: 1px solid #ccc;
+}
+
+.collect,
+.product-one,
+.product-cat {
+    flex-basis: calc(25% - 40px);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.collect:hover,
+.product-one:hover,
+.product-cat:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.collect .image img,
+.product-one .product-image img,
+.product-cat .product-img img {
+    width: 100%;
+    height: auto; /* Ajuster la hauteur en fonction de la largeur pour maintenir les proportions */
+    object-fit: cover;
+}
+
+.link,
+.content {
     padding: 20px;
-  }
-  /* Définition d'une classe pour les images des produits */
-  .product-image {
-    max-width: 100%; /* Largeur maximale pour s'adapter au conteneur parent */
-    height: auto; /* Hauteur automatique pour conserver les proportions originales */
-  }
-  
-  /* Utilisation de Flexbox pour aligner horizontalement les éléments dans le conteneur de produits */
-  .products-container {
+}
+
+.link a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.link a:hover {
+    color: #007bff;
+}
+
+.content h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.content section {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-wrap: wrap; /* Permettre le passage à la ligne des éléments si nécessaire */
-    justify-content: space-between; /* Aligner les éléments avec un espacement égal entre eux */
-  }
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-one:hover .overlay,
+.product-cat:hover .overlay {
+    opacity: 1;
+}
+
+.overlay i {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}

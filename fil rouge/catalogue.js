@@ -470,3 +470,6 @@ document.querySelectorAll('.product-card button').forEach(button => {
   });
 });
 
+
+
+
