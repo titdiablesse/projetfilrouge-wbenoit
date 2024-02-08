@@ -961,18 +961,15 @@ body {
     padding: 20px;
     margin-bottom: 20px;
 }
-.button {
-    padding: 10px 20px;
+#confirm-order-btn {
     background-color: #007bff;
     color: #fff;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
-.button:hover {
-    background-color: #0056b3;
-}
-
 
 
 
