@@ -834,7 +834,7 @@ body footer .Contact {
 }
 
 .collect,
-.product-one,
+
 .product-cat {
     flex-basis: calc(25% - 40px);
     background-color: #fff;
