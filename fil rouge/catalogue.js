@@ -470,6 +470,21 @@ document.querySelectorAll('.product-card button').forEach(button => {
   });
 });
 
+//barre de recherche
 
 
+function search_produits() {
+  let input = document.getElementById('category').value.trim().toLowerCase();
 
+  produits.forEach(produit => {
+    let produitElement = document.getElementById('produit-' + produit.id);
+    let nameMatch = produit.name.toLowerCase().includes(input);
+    let categoryMatch = produit.category.toLowerCase().includes(input);
+
+    if (nameMatch || categoryMatch) {
+      produitElement.style.display = "block";
+    } else {
+      produitElement.style.display = "none";
+    }
+  });
+}
