@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/18a8b83caf.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
@@ -20,14 +20,13 @@
             <a href="#"><img id="lol" src="pic/bulb.png" alt="">Webwares</a>
         </div>
         <ul class="navigation">
-            <ul class="navigation">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="catalogue.html">Produits</a></li>
-                <li><a href="equipe.html">L'équipe</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="connexion.html">connexion/inscription</a></li>
-                <li><a href="#" onclick="logout()">Se déconnecter</a></li>
-                <li><a href="panier.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="catalogue.html">Produits</a></li>
+            <li><a href="equipe.html">L'équipe</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="connexion.html">connexion/inscription</a></li>
+            <li><a href="#" onclick="logout()">Se déconnecter</a></li>
+            <li><a href="panier.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="bars">
             <img id="bar" src="pic/menu.png" alt="">
@@ -37,52 +36,53 @@
     <!-- end header -->
 
     <!-- start home  -->
-
     <div class="big-bg" id="home">
         <div class="bg-content">
-            <h1>A propos de Webwares </h1>
-            <hr>
-            <p>
-                Créé en 1998, WebWares se distingue comme un leader novateur dans le domaine du mobilier écologique. Fondée par Didier Mobilart, l'entreprise a rapidement émergé en tant que pionnière dans la conception et la vente de meubles respectueux de l'environnement.
-
-                Notre engagement envers la durabilité se reflète dans chaque aspect de notre activité, de la sélection attentive des matériaux à la production éthique. Nous croyons en la création de pièces uniques qui allient esthétisme, fonctionnalité et responsabilité environnementale.
-                
-            </p>
-            
-        </div>
-    </div>
-    <!-- end home  -->
-    <div class="bg-team" id="team">
-        <div class="team-title">
-            <section>Rencontrez Notre Équipe </section>
-            <h2>Les fondateurs passionnés qui façonnent notre E-commerce de mobilier pour les professionnels</h2>
-            <hr>
-        </div>
-        <div class="team-flex swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="team-one swiper-slide">
-                    <img src="pic/le pouce.jpg" alt="benoit">
-                    <h2>Benoît Tergemina</h2>
-                    <h3>Développeur web & web mobile</h3>
-                <h4>Le badminton, tel un match de vie, exige agilité, réflexes et persévérance. Chaque volant frappé symbolise un choix, et chaque échange représente les défis auxquels nous faisons face. Dans ce jeu incessant, nous apprenons que la victoire réside souvent dans l'harmonie entre la précision et la résilience.</h4>
-                </div>
-                <div class="team-one swiper-slide">
-                    <img src="pic/michel.jpg" alt="">
-                    <h4>Didier Mobilart</h4>
-                </div>
-                <div class="team-one swiper-slide">
-                    <img src="pic/received_900907404411587.jpg" alt="angelique">
-                    <h4>Angélique Coquet</h4>
-                </div>
-                
+            <div id="welcome-message">
+                Politique des cookies
+            </div>
+            <div id="icons">
+                <!-- Les icônes du panier et de l'utilisateur seront affichées ici -->
             </div>
         </div>
     </div>
-    <hr>
-   
+    <!-- end home  -->
 
+    <!-- start second section  -->
+    <h1>Politique des Cookies</h1>
 
-  
+    <p>Cette politique des cookies explique comment ABC Company utilise les cookies et technologies similaires lorsque vous visitez notre site web.</p>
+
+    <h2>Que sont les cookies ?</h2>
+    <p>Les cookies sont de petits fichiers texte placés sur votre ordinateur ou appareil mobile lorsque vous visitez un site web. Les cookies sont largement utilisés pour permettre aux sites web de fonctionner correctement, ainsi que pour fournir des informations aux propriétaires du site.</p>
+
+    <h2>Comment nous utilisons les cookies ?</h2>
+    <p>Nous utilisons des cookies à diverses fins, notamment pour :</p>
+    <ul>
+        <li>Assurer le fonctionnement et la sécurité de notre site web.</li>
+        <li>Personnaliser votre expérience sur notre site, par exemple en mémorisant vos préférences de langue.</li>
+        <li>Analyser l'utilisation de notre site web et améliorer son contenu et ses fonctionnalités.</li>
+        <li>Diffuser des publicités ciblées qui peuvent vous intéresser.</li>
+    </ul>
+
+    <h2>Types de cookies que nous utilisons</h2>
+    <p>Nous utilisons différents types de cookies sur notre site web :</p>
+    <ul>
+        <li>Cookies indispensables : ces cookies sont nécessaires pour que vous puissiez naviguer sur notre site et utiliser ses fonctionnalités de base.</li>
+        <li>Cookies de performance : ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web, en collectant des informations anonymes sur les pages visitées et les erreurs éventuelles.</li>
+        <li>Cookies de fonctionnalité : ces cookies permettent à notre site web de mémoriser vos choix et préférences, comme votre langue préférée ou votre région.</li>
+        <li>Cookies de ciblage : ces cookies sont utilisés pour diffuser des publicités plus pertinentes pour vous et vos intérêts. Ils sont également utilisés pour limiter le nombre de fois où vous voyez une publicité et pour mesurer l'efficacité des campagnes publicitaires.</li>
+    </ul>
+
+    <h2>Comment contrôler les cookies</h2>
+    <p>Vous pouvez contrôler et gérer les cookies dans les paramètres de votre navigateur. Veuillez noter que la désactivation des cookies peut affecter le fonctionnement de certaines parties de notre site web.</p>
+
+    <h2>Modification de notre politique des cookies</h2>
+    <p>Nous pouvons mettre à jour cette politique des cookies de temps à autre pour refléter les changements dans nos pratiques de cookies. Nous vous encourageons à consulter cette page régulièrement pour rester informé des dernières informations sur l'utilisation des cookies sur notre site web.</p>
+
+    <h2>Contactez-nous</h2>
+    <p>Si vous avez des questions concernant notre politique des cookies, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@webwares.com">contact@webwares.com</a>.</p>
+    
 
     <div class="bg-footer">
         <div class="footer-flex">
@@ -134,42 +134,6 @@
 
     <!-- end scroll to top  -->
 
-
-
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        loop: true,
-        autoplay: true,
-        speed: 600,
-        breakpoints: {
-          576: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          991: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-        },
-      });
-    </script>
-
-
-
-
-
-   
-
-    
    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
