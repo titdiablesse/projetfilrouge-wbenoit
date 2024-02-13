@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/18a8b83caf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="panier.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -20,13 +21,14 @@
             <a href="#"><img id="lol" src="pic/bulb.png" alt="">Webwares</a>
         </div>
         <ul class="navigation">
-            <li><a href="index.html" class="active">Accueil</a></li>
-            <li><a href="catalogue.html">Produits</a></li>
-            <li><a href="equipe.html">L'équipe</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="connexion.html">connexion/inscription</a></li>
-            <li><a href="#" onclick="logout()">Se déconnecter</a></li>
-            <li><a href="panier.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <ul class="navigation">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="catalogue.html">Produits</a></li>
+                <li><a href="equipe.html">L'équipe</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="connexion.html">connexion/inscription</a></li>
+                <li><a href="#" onclick="logout()">Se déconnecter</a></li>
+                <li><a href="panier.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="bars">
             <img id="bar" src="pic/menu.png" alt="">
@@ -36,64 +38,64 @@
     <!-- end header -->
 
     <!-- start home  -->
+
     <div class="big-bg" id="home">
         <div class="bg-content">
-            <div id="welcome-message">
-                Mentions Legales WebWares
-            </div>
-            <div id="icons">
-                <!-- Les icônes du panier et de l'utilisateur seront affichées ici -->
+            <h1>Votre Panier  </h1>
+            <hr>
+            <p>
+                Votre destination en ligne pour découvrir une vaste gamme de mobilier élégant et de qualité.
+                <br> Explorez notre collection soigneusement sélectionnée qui allie esthétique, confort et fonctionnalité.
+            </p>
+            <div class="bg-link">
+                <a href="#">Connexion/Inscription</a>
             </div>
         </div>
     </div>
-    <!-- end home  -->
-
-    <!-- start second section  -->
-
-    <h1>Mentions Légales</h1>
-
-    <h2>Éditeur du Site</h2>
-    <ul>
-        <li>Nom de l'entreprise :Webwares</li>
-        <li>Forme juridique : Société par Actions Simplifiée (SAS)</li>
-        <li>Adresse du siège social : 123 Avenue des Fleurs, 75001 Paris, France</li>
-        <li>Numéro de téléphone : +33 1 23 45 67 89</li>
-        <li>Adresse e-mail : contact@webwares.com</li>
-        <li>Capital social : 100 000 euros</li>
-        <li>Numéro d'immatriculation : RCS Paris 123 456 789</li>
-    </ul>
-
-    <h2>Directeur de la publication</h2>
-    <p>Nom du directeur de la publication : Didier Mobilart</p>
-
-    <h2>Hébergeur</h2>
-    <ul>
-        <li>Nom de l'hébergeur : Hosting Solutions Ltd.</li>
-        <li>Adresse : 456 Rue des Nuages, 69002 Lyon, France</li>
-        <li>Numéro de téléphone : +33 4 56 78 90 12</li>
-        <li>Adresse e-mail : info@hostingsolutions.com</li>
-    </ul>
-
-    <h2>Propriété intellectuelle</h2>
-    <p>Le contenu de ce site internet est protégé par le droit d'auteur et est la propriété de ABC Company sauf mention contraire. Toute reproduction ou représentation totale ou partielle de ce site ou de son contenu est interdite sans autorisation expresse et préalable de ABC Company.</p>
-
-    <h2>Données personnelles</h2>
-    <p>Nous collectons et traitons les données personnelles conformément aux lois en vigueur, y compris la RGPD en Europe ou toute autre loi locale applicable. Ces données sont collectées dans le but de [expliquer la raison de la collecte, par exemple: répondre aux demandes des utilisateurs, traiter les commandes, etc.]. Pour plus d'informations sur notre politique de confidentialité et vos droits en matière de données personnelles, veuillez consulter notre <a href="confi.html">politique de confidentialité</a>.</p>
-
-    <h2>Cookies</h2>
-    <p>Nous utilisons des cookies sur ce site pour améliorer votre expérience utilisateur et fournir des services adaptés à vos centres d'intérêt. En continuant à naviguer sur ce site, vous acceptez l'utilisation de cookies conformément à notre <a href="cookies.html">politique de cookies</a>. Vous pouvez modifier vos paramètres de cookies à tout moment.</p>
-
-
-    <h2>Limitation de responsabilité</h2>
-    <p>L'utilisation des informations fournies sur ce site se fait sous la responsabilité de l'utilisateur. Nous nous efforçons de maintenir les informations à jour et exactes, mais nous ne garantissons pas l'exhaustivité, l'exactitude ou la pertinence des informations fournies. En aucun cas, nous ne serons responsables des dommages directs ou indirects pouvant résulter de l'utilisation de ce site.</p>
-
-
-    <h2>Loi applicable et juridiction compétente</h2>
-    <p>Le présent site est soumis à la loi française. En cas de litige, les tribunaux français seront seuls compétents.</p>
-
-    <h2>Contact</h2>
-    <p>Pour toute question ou demande concernant le site internet, veuillez nous contacter à l'adresse suivante : <a href="mailto:contact@webwares.com">contact@webwares.com</a></p>
+  
     
+    
+</head>
+<body>
+    <div id="cart-items">
+        <!-- Les éléments du panier seront ajoutés ici dynamiquement -->
+    </div>
+    <div id="totals">
+        <div id="subtotal-ht">Sous-total HT: 0.00€</div>
+        <div id="subtotal-ttc">Sous-total TTC: 0.00€</div>
+    </div>
+    <div id="total">Total général HT: 0.00€</div>
+    <div id="total-ttc">Total général TTC: 0.00€</div>
+    <button id="checkout-btn">Payer</button>
+    
+
+
+   
+    <div class="bg-team" id="team">
+        <div class="team-title">
+            <section>Rencontrez Notre Équipe </section>
+            <h2>Les fondateurs passionnés qui façonnent notre E-commerce de mobilier pour les professionnels</h2>
+            <hr>
+        </div>
+        <div class="team-flex swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="team-one swiper-slide">
+                    <img src="pic/le pouce.jpg" alt="benoit">
+                    <h4>Benoît Tergemina</h4>
+                </div>
+                <div class="team-one swiper-slide">
+                    <img src="pic/michel.jpg" alt="">
+                    <h4>Didier Mobilart</h4>
+                </div>
+                <div class="team-one swiper-slide">
+                    <img src="pic/received_900907404411587.jpg" alt="angelique">
+                    <h4>Angélique Coquet</h4>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <hr>
 
     
     <div class="bg-footer">
@@ -129,6 +131,10 @@
                 copyright &copy; WebWares "Didier MOBILART" <span>All Rights Reserved.</span>
                
             </section>
+        </div>
+    </div>
+        </div>
+    </div>
 
     <!-- end footer section  -->
 
@@ -144,10 +150,47 @@
 
     <!-- end scroll to top  -->
 
+
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: true,
+        speed: 600,
+        breakpoints: {
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+
+
+
+
+
+   
+
+    
    
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script src="main.js"></script>
+<script src="panier.js"></script> 
 </html>

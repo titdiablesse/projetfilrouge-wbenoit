@@ -124,5 +124,5 @@ document.getElementById("confirm-order-btn").addEventListener("click", function(
     alert("Votre commande a été confirmée !");
 
     // Vous pouvez également effectuer d'autres actions ici, comme rediriger l'utilisateur vers une autre page après la confirmation de la commande
-    // window.location.href = "page-de-confirmation.html";
+    window.location.href = "index.html";
 });

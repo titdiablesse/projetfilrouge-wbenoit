@@ -946,7 +946,30 @@ body footer .Contact {
   
 /* fin de  footer  */
 
+/* Pour les écrans de taille moyenne et plus petits */
+@media only screen and (max-width: 768px) {
+    /* Style spécifique pour les écrans plus petits */
+    header {
+        padding: 10px;
+    }
+    .bg-content {
+        padding: 20px;
+    }
+    .swiper-slide {
+        width: 100%;
+    }
+}
 
+/* Pour les écrans de taille très petite (tels que les smartphones en mode portrait) */
+@media only screen and (max-width: 576px) {
+    /* Style spécifique pour les écrans très petits */
+    .navigation {
+        display: none; /* Masquer la navigation principale */
+    }
+    .bars {
+        display: block; /* Afficher l'icône de menu */
+    }
+}
 
 
 

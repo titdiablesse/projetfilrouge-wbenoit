@@ -488,3 +488,51 @@ function search_produits() {
     }
   });
 }
+
+// Code JavaScript pour gérer l'ajout de produits au panier
+
+// Fonction pour gérer l'ajout d'un produit au panier
+function ajouterAuPanier(produit) {
+  // Récupérer les éléments du panier depuis le stockage local ou initialiser un tableau vide
+  let itemsPanier = JSON.parse(localStorage.getItem('itemsPanier')) || [];
+
+  // Vérifier si le produit est déjà dans le panier en se basant sur son SKU ou tout autre identifiant unique
+  const indexProduitExistant = itemsPanier.findIndex(item => item.sku === produit.sku);
+
+  if (indexProduitExistant !== -1) {
+      // Si le produit est déjà dans le panier, mettre à jour sa quantité
+      itemsPanier[indexProduitExistant].quantite++;
+  } else {
+      // Si le produit n'est pas dans le panier, l'ajouter au panier
+      itemsPanier.push({ sku: produit.sku, nom: produit.nom, prix: produit.prix, quantite: 1 });
+  }
+
+  // Sauvegarder les éléments du panier mis à jour dans le stockage local
+  localStorage.setItem('itemsPanier', JSON.stringify(itemsPanier));
+}
+
+// Fonction pour gérer l'événement de clic sur l'icône du panier
+function gererClicAjoutPanier(event) {
+  // Trouver l'élément parent le plus proche avec la classe "product-one"
+  const elementProduit = event.target.closest('.product-one');
+
+  if (elementProduit) {
+      // Récupérer les informations sur le produit depuis l'élément du produit
+      const produit = {
+          sku: elementProduit.dataset.sku, // Supposant que vous avez un attribut "data-sku" sur chaque élément de produit
+          nom: elementProduit.querySelector('h4').innerText,
+          prix: elementProduit.querySelector('section').innerText.replace('€', ''), // Supposant que le prix est au format "xx.xx€"
+      };
+
+      // Ajouter le produit au panier
+      ajouterAuPanier(produit);
+
+      // Optionnellement, rediriger l'utilisateur vers la page du panier
+      window.location.href = 'panier.html';
+  }
+}
+
+// Attacher le gestionnaire d'événement de clic à tous les éléments avec la classe "fa-shopping-bag"
+document.querySelectorAll('.fa-shopping-bag').forEach(element => {
+  element.addEventListener('click', gererClicAjoutPanier);
+});
