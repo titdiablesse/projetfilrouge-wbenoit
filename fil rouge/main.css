@@ -683,7 +683,6 @@ header.active #bar{
     }
 }
 
-
 .bg-team{
     width: 100%;
     margin: 100px 0px 0px;
@@ -718,34 +717,39 @@ header.active #bar{
     margin: 0 auto;
     margin-top: -360px;
     margin-bottom: 100px;
+    
 }
 .team-flex .team-one{
     width: 32%;
 }
 .team-flex .team-one img{
-    width: 100%;
+    width: 600px;
+    height: 800px; /* Vous pouvez ajuster cette hauteur en fonction de vos besoins */
+    
 }
 .team-flex .team-one h4{
     text-transform: capitalize;
     font-size: 18px;
     margin-top: 10px;
 }
-
-@media(max-width: 991px){
-    .team-flex .team-one h4{
-        font-size: 19px;
+@media screen and (max-width: 991px) {
+    .team-flex .team-one {
+        width: 48%; /* Réduire la largeur des éléments pour s'adapter à l'écran */
+        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
     }
 }
 
-@media(max-width: 768){
-    .team-flex .team-one h4{
-        font-size: 18px;
+@media screen and (max-width: 768px) {
+    .team-flex .team-one {
+        width: 100%; /* Sur les écrans plus petits, occuper toute la largeur */
+        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
     }
 }
 
-@media(max-width: 576){
-    .team-flex .team-one h4{
-        font-size: 17px;
+@media screen and (max-width: 576px) {
+    .team-flex .team-one {
+        width: 100%; /* Sur les écrans encore plus petits, occuper toute la largeur */
+        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
     }
 }
 

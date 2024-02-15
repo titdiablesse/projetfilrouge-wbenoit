@@ -1,3 +1,234 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+/* root pour la couleur verte des obj et contour */
+:root{
+    --main-color: #207178;
+}
+#icons[data-allowed="false"] .fa-cart-shopping {
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* début de header */
+header{
+    width: 100%;
+    padding: 13px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1111;
+    transition: .5s ease-in-out;
+}
+
+header .logo a{
+    font-size: 28px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #FFF;
+    font-family: 'Fenix', serif;
+}
+header .logo img{
+    width: 30px;
+    margin-top: -5px;
+}
+header ul{
+    display: flex;
+    margin: 0;
+}
+header ul li{
+    margin: 0px 20px;
+}
+header ul li a{
+    color: #fff;
+    text-decoration: none!important;
+    text-transform: capitalize;
+    display: block;
+    transition: .4s;
+    font-size: 15px;
+}
+header ul li a:hover{
+    color: #45ccb8;
+}
+
+header .bars{
+    display: none;
+}
+header .bars img{
+    width: 30px;
+    cursor: pointer;
+}
+
+header.active{
+    background: #FFF;
+    box-shadow: 0px 1px 0px #DDD;
+}
+header.active .logo a{
+    color: #207178;
+}
+header.active ul li a{
+    color: #207178;
+    border-color: #207178;
+}
+header.active #bar{
+    background: #207178;
+    color: #207178;
+    padding: 4px 5px;
+    width: 33px;
+}
+@media(max-width: 991px){
+    header .navigation{
+        display: block;
+        height: 100vh;
+        width: 50%;
+        background: rgba(0,0,0,.5);
+        position: absolute;
+        top: 68px;
+        right: -50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+    }
+    header.active .navigation{
+        background: #FFF;
+        box-shadow: -1px 0px 0px #DDD;
+    }
+    header .navigation li{
+        margin: 15px 0px;
+    }
+    header .bars{
+        display: block;
+    }
+}
+
+@media(max-width: 576px){
+    header{
+        padding: 13px 30px;
+    }
+    header .navigation.new{
+        width: 100%;
+        right: -100%;
+    }
+}
+
+.big-bg{
+    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)) ,url(pic/tapis-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-bg .bg-content{
+    text-align: center;
+    color: #FFF;
+}
+.big-bg .bg-content h1{
+    font-size: 55px;
+}
+.big-bg .bg-content hr{
+    background: #FFF;
+    width: 35%;
+    height: 1px;
+    margin: 10px auto 13px auto;
+}
+.big-bg .bg-content .bg-link{
+    margin-top: 16px;
+}
+.big-bg .bg-content .bg-link a{
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #FFF;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+.bg-content .bg-link a::before{
+    position: absolute;
+    content: "";
+    background: #207178;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: .5s ease-in-out;
+}
+.bg-content .bg-link a:hover::before{
+    left: 0%;
+}
+.bg-content .bg-link a:hover{
+    border-color: #207178;
+}
+
+@media(max-width: 991px){
+    .big-bg .bg-content h1{
+        font-size: 50px;
+    }
+    .big-bg .bg-content p{
+        font-size: 15px;
+    }
+    .big-bg .bg-content .bg-link a{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 768px){
+    .big-bg .bg-content h1{
+        font-size: 43px;
+    }
+    .big-bg .bg-content p{
+        font-size: 14px;
+    }
+    .big-bg .bg-content .bg-link a{
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 576px){
+    .big-bg .bg-content{
+        padding: 0px 15px;
+    }
+    .big-bg .bg-content hr{
+        width: 130px;
+    }
+    .big-bg .bg-content br{
+        display: none;
+    }
+    .big-bg .bg-content h1{
+        font-size: 28px;
+    }
+    .big-bg .bg-content p{
+        font-size: 13px;
+    }
+    .big-bg .bg-content .bg-link a{
+        font-size: 13px;
+    }
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
