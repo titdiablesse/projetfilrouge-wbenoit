@@ -246,6 +246,8 @@ p {
     flex-wrap: wrap;
     grid-row-gap: 20px;
 }
+
+
 .collect-flex .link{
     margin-top: 20px;
 }
@@ -588,34 +590,39 @@ p {
     margin: 0 auto;
     margin-top: -360px;
     margin-bottom: 100px;
+    
 }
 .team-flex .team-one{
     width: 32%;
 }
 .team-flex .team-one img{
-    width: 100%;
+    width: 600px;
+    height: 800px; /* Vous pouvez ajuster cette hauteur en fonction de vos besoins */
+    
 }
 .team-flex .team-one h4{
     text-transform: capitalize;
     font-size: 18px;
     margin-top: 10px;
 }
-
-@media(max-width: 991px){
-    .team-flex .team-one h4{
-        font-size: 19px;
+@media screen and (max-width: 991px) {
+    .team-flex .team-one {
+        width: 48%; /* Réduire la largeur des éléments pour s'adapter à l'écran */
+        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
     }
 }
 
-@media(max-width: 768){
-    .team-flex .team-one h4{
-        font-size: 18px;
+@media screen and (max-width: 768px) {
+    .team-flex .team-one {
+        width: 100%; /* Sur les écrans plus petits, occuper toute la largeur */
+        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
     }
 }
 
-@media(max-width: 576){
-    .team-flex .team-one h4{
-        font-size: 17px;
+@media screen and (max-width: 576px) {
+    .team-flex .team-one {
+        width: 100%; /* Sur les écrans encore plus petits, occuper toute la largeur */
+        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
     }
 }
 /* fin de  team  */
@@ -823,6 +830,7 @@ body footer .Contact {
     background-color: #f5f5f5;
 }
 
+
 .collect-flex,
 .productcat-flex,
 .bigcat {
@@ -841,6 +849,24 @@ body footer .Contact {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
+    width: 400px; /* Choisissez la largeur désirée */
+    height:800px; /* Choisissez la hauteur désirée */
+}
+
+@media(max-width: 991px) {
+    .collect,
+    .product-cat {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media(max-width: 576px) {
+    .collect,
+    .product-cat {
+        flex-basis: calc(100% - 20px);
+        width: auto;
+        margin: 0 10px;
+    }
 }
 
 .collect:hover,
@@ -853,9 +879,8 @@ body footer .Contact {
 .collect .image img,
 .product-one .product-image img,
 .product-cat .product-img img {
-    width: 100%;
-    height: auto; /* Ajuster la hauteur en fonction de la largeur pour maintenir les proportions */
-    object-fit: cover;
+    width: 400px; /* Choisissez la largeur désirée */
+    height:600px; /* Choisissez la hauteur désirée */
 }
 
 .link,
