@@ -57,44 +57,30 @@
     
 </head>
 <body>
-    <div id="cart-items">
-        <!-- Les éléments du panier seront ajoutés ici dynamiquement -->
-    </div>
-    <div id="totals">
-        <div id="subtotal-ht">Sous-total HT: 0.00€</div>
-        <div id="subtotal-ttc">Sous-total TTC: 0.00€</div>
-    </div>
-    <div id="total">Total général HT: 0.00€</div>
-    <div id="total-ttc">Total général TTC: 0.00€</div>
-    <button id="checkout-btn">Payer</button>
-    
+    <h2>Panier</h2>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th>Prix unitaire (€)</th>
+                <th>Quantité</th>
+                <th>Prix total (€)</th>
+            </tr>
+        </thead>
+        <tbody id="cart-body">
+            <!-- Les lignes du panier seront ajoutées ici dynamiquement -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="total">Total :</td>
+                <td id="total-price" class="total">0.00</td>
+            </tr>
+        </tfoot>
+    </table>
 
 
    
-    <div class="bg-team" id="team">
-        <div class="team-title">
-            <section>Rencontrez Notre Équipe </section>
-            <h2>Les fondateurs passionnés qui façonnent notre E-commerce de mobilier pour les professionnels</h2>
-            <hr>
-        </div>
-        <div class="team-flex swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="team-one swiper-slide">
-                    <img src="pic/le pouce.jpg" alt="benoit">
-                    <h4>Benoît Tergemina</h4>
-                </div>
-                <div class="team-one swiper-slide">
-                    <img src="pic/barda2.jpg" alt="">
-                    <h4>Didier Mobilart</h4>
-                </div>
-                <div class="team-one swiper-slide">
-                    <img src="pic/received_900907404411587.jpg" alt="angelique">
-                    <h4>Angélique Coquet</h4>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+  
     <hr>
 
     

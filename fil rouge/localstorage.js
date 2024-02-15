@@ -21,6 +21,7 @@
 // const storedCommandes = JSON.parse(localStorage.getItem('commandes'));
 
 // // Récupération des utilisateurs
+
 // const storedUtilisateurs = JSON.parse(localStorage.getItem('utilisateurs'));
 document.addEventListener('DOMContentLoaded', function() {
   // Récupérer les éléments DOM
@@ -404,35 +405,17 @@ function displayProducts(products) {
             const price = document.createElement('p');
             price.textContent = 'Prix: ' + product.price + '€';
             li.appendChild(price);
-        }
+        }; 
+        
         // Ajout de l'élément de liste à la liste
         productListElement.appendChild(li);
     });
 }
 
-// 3. Ajouter un bouton de connexion/inscription
-const loginButton = document.getElementById('login-button');
-loginButton.addEventListener('click', function() {
-    // Code pour gérer la connexion de l'utilisateur
-    // Par exemple, afficher un formulaire de connexion ou rediriger vers une page de connexion
-});
 
 
 
 
-// Fonction pour inscrire un nouvel utilisateur
-function registerUser(username, password) {
-  // Vérifier si l'utilisateur existe déjà
-  if (localStorage.getItem(username)) {
-      console.log('Cet utilisateur existe déjà.');
-      return false; // L'inscription échoue
-  } else {
-      // Stocker les informations de l'utilisateur dans le localStorage
-      localStorage.setItem(username, password);
-      console.log('Inscription réussie.');
-      return true; // L'inscription réussit
-  }
-}
 
 // Fonction pour connecter un utilisateur
 function loginUser(username, password) {

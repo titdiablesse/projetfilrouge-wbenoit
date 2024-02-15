@@ -83,3 +83,42 @@ $(document).ready(function() {
       window.location.href = 'confirmecdm.html'; // Redirection vers la page commande.html
   });
 });
+
+  // Fonction pour calculer le prix total de tous les produits dans le panier
+  function calculateTotalPrice() {
+    let totalPrice = 0;
+    const rows = document.querySelectorAll('#cart-body tr');
+    rows.forEach(row => {
+        const price = parseFloat(row.querySelector('.unit-price').textContent);
+        const quantity = parseInt(row.querySelector('.quantity').value);
+        const total = price * quantity;
+        row.querySelector('.total-price').textContent = total.toFixed(2);
+        totalPrice += total;
+    });
+    document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+}
+
+// Fonction pour ajouter une ligne au panier
+function addToCart(product) {
+    const tbody = document.getElementById('cart-body');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${product.name}</td>
+        <td class="unit-price">${product.price}</td>
+        <td><input type="number" class="quantity" value="10" min="10" onchange="calculateTotalPrice()"></td>
+        <td class="total-price">${(product.price * 10).toFixed(2)}</td>
+    `;
+    tbody.appendChild(row);
+    calculateTotalPrice();
+}
+
+// Appel de la fonction pour ajouter les produits au panier
+window.addEventListener('load', function() {
+    // Supposons que "storedProducts" contient les produits ajoutés au panier
+    const storedProducts = JSON.parse(localStorage.getItem('produits'));
+
+    // Ajouter chaque produit au panier
+    storedProducts.forEach(product => {
+        addToCart(product);
+    });
+});
