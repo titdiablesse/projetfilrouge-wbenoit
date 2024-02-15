@@ -22,8 +22,65 @@
 
 // // Récupération des utilisateurs
 // const storedUtilisateurs = JSON.parse(localStorage.getItem('utilisateurs'));
+document.addEventListener('DOMContentLoaded', function() {
+  // Récupérer les éléments DOM
+  const welcomeMessage = document.getElementById('welcome-message');
+  const iconsSection = document.getElementById('icons');
+  const searchInput = document.getElementById('search-input');
+  const productList = document.getElementById('product-list');
+  
+  // Vérifier si l'utilisateur est connecté
+  if (isUserLoggedIn()) {
+      // Si connecté, afficher le message de bienvenue et les icônes
+      const username = localStorage.getItem('username');
+      welcomeMessage.innerHTML = `<p>Bienvenue ${username}</p>`;
+      iconsSection.innerHTML = `
+          <a href="panier.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <div class="user-icon-dropdown">
+              <span>Bienvenue ${username}</span>
+              <ul>
+                  <li><a href="#">Profil</a></li>
+                  <li><a href="#" onclick="logout()">Déconnexion</a></li>
+              </ul>
+          </div>
+      `;
+  } else {
+      // Si déconnecté, afficher un message différent ou masquer la section
+      welcomeMessage.innerHTML = '<p>Connectez-vous pour découvrir notre collection.</p>';
+      iconsSection.style.display = 'none';
+  }
 
+  // Afficher les produits dans la liste
+  displayProducts();
 
+  // Fonction pour afficher les produits dans la liste
+  function displayProducts() {
+      // Récupérer les produits depuis le localStorage
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+      
+      // Générer le contenu de la liste des produits
+      let productListHTML = '';
+      products.forEach(product => {
+          productListHTML += `<li>${product.name} - ${product.price}€</li>`;
+      });
+
+      // Afficher la liste des produits
+      productList.innerHTML = productListHTML;
+  }
+
+  // Fonction pour rechercher un produit
+  function searchProduct() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+      const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm));
+      // Afficher les produits filtrés
+      let productListHTML = '';
+      filteredProducts.forEach(product => {
+          productListHTML += `<li>${product.name} - ${product.price}€</li>`;
+      });
+      productList.innerHTML = productListHTML;
+  }
+});
 
 
 // Exemple tableau des catégories de produits
