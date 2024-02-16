@@ -459,7 +459,7 @@
 
 
 <!-------complete html----------->
-
+<button type="button" class="btn btn-success" id="addButton">Add</button>
 
 
 
@@ -485,6 +485,34 @@
 		  });
 		  
 	   });
+
+	   document.getElementById("addButton").addEventListener("click", function() {
+    // Récupérer les valeurs du formulaire
+    var productName = document.querySelector("#addEmployeeModal input[name='product_name']").value;
+    var productPrice = document.querySelector("#addEmployeeModal input[name='product_price']").value;
+    // Récupérer d'autres valeurs si nécessaire
+
+    // Envoyer les données au serveur ou effectuer une action côté client
+    // Par exemple, envoyer une requête AJAX avec les données ou ajouter une nouvelle entrée à une liste côté client
+    // Exemple d'envoi de données via une requête AJAX en utilisant jQuery
+    $.ajax({
+        url: "url_du_serveur",
+        method: "POST",
+        data: {
+            productName: productName,
+            productPrice: productPrice
+            // Ajouter d'autres données si nécessaire
+        },
+        success: function(response) {
+            // Traiter la réponse du serveur si nécessaire
+            console.log("Données envoyées avec succès !");
+        },
+        error: function(xhr, status, error) {
+            // Gérer les erreurs de la requête AJAX si nécessaire
+            console.error("Erreur lors de l'envoi des données : " + error);
+        }
+    });
+});
   </script>
   
   

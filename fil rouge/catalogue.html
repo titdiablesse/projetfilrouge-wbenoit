@@ -21,11 +21,11 @@
             <a href="#"><img id="lol" src="pic/bulb.png" alt="">Webwares</a>
         </div>
         <ul class="navigation">
-            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="accueil.html" class="active">Accueil</a></li>
             <li><a href="catalogue.html">Produits</a></li>
             <li><a href="equipe.html">L'équipe</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#" onclick="logout()">Se déconnecter</a></li>
+            <li><a href="accueil.html" onclick="logout()">Se déconnecter</a></li>
             <li><a href="panier.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
         <div class="bars">
@@ -207,12 +207,18 @@
 
 <!-- barre de recherche  -->
 
+<div id="search-bar">
+    <input type="text" id="search-input" placeholder="en cours de construction">
+    <button id="search-button" onclick="searchProduct()">Rechercher</button>
+</div>
 
-<label for="site-search">Rechercher sur le site :</label>
-<input type="search" id="category" name="q" />
-<button onclick="search_produits()">Rechercher</button>
+<ul id="product-list">
+    <!-- La liste des produits sera générée dynamiquement ici -->
+</ul>
+<div id="product-category"></div> <!-- Div pour afficher la catégorie du produit -->
+  
+<div id="categoriesList"></div> <!-- Div pour afficher les catégories -->
 
-<div id="produits-container">
   <!-- Les résultats de la recherche seront affichés ici -->
 </div>
 <div class="big-cat" id="features">
@@ -475,7 +481,7 @@
 
 
 <!--luminaire -->
-
+<div class="big-cat" id="luminaire">
 <p>
     Espace Luminaire
  </p>
@@ -700,7 +706,7 @@
      <div class="product-img">
          <img src="pic/mobilier-5.jpg" alt="">
          <div class="overlay">
-            <i class="fas fa-shopping-bag"></i>
+            
          </div>
      </div>
      <div class="content">

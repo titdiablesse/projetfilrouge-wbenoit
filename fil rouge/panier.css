@@ -7,6 +7,17 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
 /* root pour la couleur verte des obj et contour */
 :root{
     --main-color: #207178;
@@ -225,6 +236,17 @@ header.active #bar{
     .big-bg .bg-content .bg-link a{
         font-size: 13px;
     }
+}
+/* root pour la couleur verte des obj et contour */
+:root{
+    --main-color: #207178;
+}
+#icons[data-allowed="false"] .fa-cart-shopping {
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 

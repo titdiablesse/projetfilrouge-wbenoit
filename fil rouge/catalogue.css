@@ -597,7 +597,7 @@ p {
 }
 .team-flex .team-one img{
     width: 600px;
-    height: 800px; /* Vous pouvez ajuster cette hauteur en fonction de vos besoins */
+    height: 800px; 
     
 }
 .team-flex .team-one h4{
@@ -607,22 +607,22 @@ p {
 }
 @media screen and (max-width: 991px) {
     .team-flex .team-one {
-        width: 48%; /* Réduire la largeur des éléments pour s'adapter à l'écran */
-        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
+        width: 48%; 
+        margin-bottom: 20px; 
     }
 }
 
 @media screen and (max-width: 768px) {
     .team-flex .team-one {
-        width: 100%; /* Sur les écrans plus petits, occuper toute la largeur */
-        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
+        width: 100%; 
+        margin-bottom: 20px; 
     }
 }
 
 @media screen and (max-width: 576px) {
     .team-flex .team-one {
-        width: 100%; /* Sur les écrans encore plus petits, occuper toute la largeur */
-        margin-bottom: 20px; /* Ajouter une marge inférieure pour l'espacement */
+        width: 100%; 
+        margin-bottom: 20px; 
     }
 }
 /* fin de  team  */
@@ -849,8 +849,8 @@ body footer .Contact {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    width: 400px; /* Choisissez la largeur désirée */
-    height:800px; /* Choisissez la hauteur désirée */
+    width: 200px; /* Choisissez la largeur désirée */
+    
 }
 
 @media(max-width: 991px) {
@@ -879,7 +879,7 @@ body footer .Contact {
 .collect .image img,
 .product-one .product-image img,
 .product-cat .product-img img {
-    width: 400px; /* Choisissez la largeur désirée */
+    width:400px; /* Choisissez la largeur désirée */
     height:600px; /* Choisissez la hauteur désirée */
 }
 

@@ -83,7 +83,7 @@ $(document).ready(function () {
         $('#panier-section').hide(); // Assurez-vous que votre section panier a un id approprié
     }
     
-    // Continuez avec le reste de votre code
+  
 });
 
 // Vous pouvez appeler vos fonctions après la vérification de connexion
